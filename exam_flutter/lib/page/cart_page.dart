@@ -1,5 +1,8 @@
 import 'package:exam_flutter/images_section.dart';
+import 'package:exam_flutter/page/about_us_page.dart';
+import 'package:exam_flutter/page/paiement_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../bo/cart.dart';
@@ -44,7 +47,7 @@ class EmptyCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,6 +106,17 @@ class ListCart extends StatelessWidget {
               ),
             ),
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red, // Changez cette couleur selon vos préférences
+            ),
+            child: Text(
+              "Procéder au paiement",
+              style:
+              TextStyle(color: Colors.white70, fontFamily: "josefin"),
+            ),
+            onPressed: () => context.go('/paiement-page'),
+          )
         ],
       );
     });

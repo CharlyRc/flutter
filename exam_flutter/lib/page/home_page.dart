@@ -12,43 +12,7 @@ import '../bo/cart.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  final listArticles = [
-    Article(
-        nom: "PC portable",
-        description: "Pc portable google",
-        categorie: "categorie",
-        prix: 350,
-        image:
-        "https://media.istockphoto.com/id/1399199234/fr/photo/auvent-et-terrasse-de-maison-de-luxe-illustration-3d.jpg?s=1024x1024&w=is&k=20&c=p2jZ_yS-YDFyj92hqwwePUIugzi5HUEfFHIGfEq9mLA="),
-    Article(
-        nom: "Voiture",
-        description: "tesla du futur",
-        categorie: "categorie",
-        prix: 35000,
-        image:
-        "https://media.istockphoto.com/id/1562275898/fr/photo/rendu-3d-dun-concept-car-g%C3%A9n%C3%A9rique-sans-marque.jpg?s=612x612&w=0&k=20&c=cBu2IprlP7bVIJEE-V8pwP1btUdXCcTLvfzKvlNgS2g="),
-    Article(
-        nom: "Moto",
-        description: "600 Daytona",
-        categorie: "categorie",
-        prix: 16000,
-        image:
-        "https://media.istockphoto.com/id/1399199234/fr/photo/auvent-et-terrasse-de-maison-de-luxe-illustration-3d.jpg?s=1024x1024&w=is&k=20&c=p2jZ_yS-YDFyj92hqwwePUIugzi5HUEfFHIGfEq9mLA="),
-    Article(
-        nom: "Parasol",
-        description: "parasol bleu",
-        categorie: "categorie",
-        prix: 28,
-        image:
-        "https://media.istockphoto.com/id/1399199234/fr/photo/auvent-et-terrasse-de-maison-de-luxe-illustration-3d.jpg?s=1024x1024&w=is&k=20&c=p2jZ_yS-YDFyj92hqwwePUIugzi5HUEfFHIGfEq9mLA="),
-    Article(
-        nom: "Maison",
-        description: "Villa avec piscine",
-        categorie: "categorie",
-        prix: 3500000,
-        image:
-        "https://media.istockphoto.com/id/1399199234/fr/photo/auvent-et-terrasse-de-maison-de-luxe-illustration-3d.jpg?s=1024x1024&w=is&k=20&c=p2jZ_yS-YDFyj92hqwwePUIugzi5HUEfFHIGfEq9mLA="),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

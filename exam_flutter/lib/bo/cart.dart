@@ -30,4 +30,18 @@ class Cart extends ChangeNotifier{
     }
     return "${total.toStringAsFixed(2)}€";
   }
+  String economy() {
+    num economy = 0;
+    for (Article article in _items) {
+      economy += article.prix*0.2;
+    }
+    return "${economy.toStringAsFixed(2)}€";
+  }
+  String priceTTH() {
+    num prixTTC = 0;
+    for (Article article in _items) {
+      prixTTC += article.prix*(1+0.2);
+    }
+    return "${prixTTC.toStringAsFixed(2)}€";
+  }
 }

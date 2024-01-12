@@ -1,6 +1,7 @@
 import 'package:exam_flutter/page/home_page.dart';
 import 'package:exam_flutter/page/about_us_page.dart';
 import 'package:exam_flutter/page/detail_page.dart';
+import 'package:exam_flutter/page/paiement_page.dart';
 import 'package:flutter/material.dart';
 import 'package:exam_flutter/page/cart_page.dart';
 import 'package:go_router/go_router.dart';
@@ -24,6 +25,10 @@ final _router = GoRouter(
             GoRoute(
               path: 'detail',
               builder:(_,state)=> DetailPage(article:state.extra as Article),
+            ),
+            GoRoute(
+              path: 'paiement-page',
+              builder:(_,state)=> PaiementPage(),
             ),
           ]
       )
