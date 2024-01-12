@@ -8,32 +8,26 @@ import 'package:go_router/go_router.dart';
 
 import 'bo/article.dart';
 
-final _router = GoRouter(
-    routes: [
-      GoRoute(
-          path: '/',
-          builder: (_,__)=> HomePage(),
-          routes: [
-            GoRoute(
-              path: 'cart',
-              builder: (_,__)=> CartPage(title: "test"),
-            ),
-            GoRoute(
-              path: 'about-us',
-              builder: (_,__)=> AboutUsPage(),
-            ),
-            GoRoute(
-              path: 'detail',
-              builder:(_,state)=> DetailPage(article:state.extra as Article),
-            ),
-            GoRoute(
-              path: 'paiement-page',
-              builder:(_,state)=> PaiementPage(),
-            ),
-          ]
-      )
-    ]
-);
+final _router = GoRouter(routes: [
+  GoRoute(path: '/', builder: (_, __) => HomePage(), routes: [
+    GoRoute(
+      path: 'cart',
+      builder: (_, __) => CartPage(title: "test"),
+    ),
+    GoRoute(
+      path: 'about-us',
+      builder: (_, __) => AboutUsPage(),
+    ),
+    GoRoute(
+      path: 'detail',
+      builder: (_, state) => DetailPage(article: state.extra as Article),
+    ),
+    GoRoute(
+      path: 'paiement-page',
+      builder: (_, state) => PaiementPage(),
+    ),
+  ])
+]);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

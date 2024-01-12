@@ -15,6 +15,7 @@ class CartPage extends StatelessWidget {
 
   final String title;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,43 +124,3 @@ class ListCart extends StatelessWidget {
   }
 }
 
-/*import 'package:flutter/material.dart';
-
-class CartPage extends StatelessWidget {
-  const CartPage({super.key, required this.title});
-
-  final String title;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Epsi shop")),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body : Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Votre panier total est de "),
-                Text("0.00€ ", style : TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-            Spacer(),
-            Column(
-              children: [
-                Text("Votre panier est vide"),
-                Icon(Icons.add_photo_alternate),
-              ],
-            ),
-            Spacer(),
-          ],
-        ),
-      ),
-    );
-  }
-}*/

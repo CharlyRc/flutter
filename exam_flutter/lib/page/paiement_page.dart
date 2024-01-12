@@ -5,8 +5,49 @@ import 'package:provider/provider.dart';
 
 import '../bo/cart.dart';
 
-class PaiementPage extends StatelessWidget {
-  PaiementPage({super.key});
+class PaiementPage extends StatefulWidget {
+  const PaiementPage({super.key});
+
+  @override
+  _PaiementPageState createState() => _PaiementPageState();
+}
+
+class _PaiementPageState extends State<PaiementPage> {
+  String selectedPayment = '';
+
+  void selectPayment(String paymentType) {
+    setState(() {
+      selectedPayment = paymentType;
+    });
+  }
+
+  Widget buildPaymentCard(IconData iconData, String paymentType) {
+    bool isSelected = selectedPayment == paymentType;
+
+    return InkWell(
+      onTap: () {
+        selectPayment(paymentType);
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: isSelected ? Colors.red : Colors.grey,
+            width: 2.0,
+          ),
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FaIcon(
+            iconData,
+            color: Colors.black,
+            size: 55,
+          ),
+        ),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -145,81 +186,21 @@ class PaiementPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: IconButton(
-                          icon: const Card(
-                            color: Colors.white,
-                            child: FaIcon(
-                              FontAwesomeIcons.ccApplePay,
-                              color: Colors.black,
-                              size: 55,
-                            ),
-                          ),
-                          onPressed: () {}),
+                    buildPaymentCard(
+                      FontAwesomeIcons.ccApplePay,
+                      'Apple Pay',
                     ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: IconButton(
-                          icon: const Card(
-                            color: Colors.white,
-                            child: FaIcon(
-                              FontAwesomeIcons.ccVisa,
-                              color: Colors.black,
-                              size: 55,
-                            ),
-                          ),
-                          onPressed: () {}),
+                    buildPaymentCard(
+                      FontAwesomeIcons.ccVisa,
+                      'Visa',
                     ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: IconButton(
-                          icon: const Card(
-                            color: Colors.white,
-                            child: FaIcon(
-                              FontAwesomeIcons.ccMastercard,
-                              color: Colors.black,
-                              size: 55,
-                            ),
-                          ),
-                          onPressed: () {}),
+                    buildPaymentCard(
+                      FontAwesomeIcons.ccMastercard,
+                      'Mastercard',
                     ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Colors.grey,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: IconButton(
-                          icon: const Card(
-                            color: Colors.white,
-                            child: FaIcon(
-                              FontAwesomeIcons.ccPaypal,
-                              color: Colors.black,
-                              size: 55,
-                            ),
-                          ),
-                          onPressed: () {}),
+                    buildPaymentCard(
+                      FontAwesomeIcons.ccPaypal,
+                      'Paypal',
                     ),
                   ],
                 ),

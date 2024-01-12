@@ -12,9 +12,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(article.nom)
-      ),
+      appBar: AppBar(title: Text(article.nom)),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -50,13 +48,10 @@ class DetailPage extends StatelessWidget {
           ),
           const Spacer(),
           ElevatedButton(
-              onPressed: ()=> context.read<Cart>().add(article),
-              child: Text("AJOUTER AU PANIER")
-          ),
+              onPressed: () => context.read<Cart>().add(article),
+              child: Text("AJOUTER AU PANIER")),
         ],
       ),
     );
   }
 }
-
-
